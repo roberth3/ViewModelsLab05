@@ -1,0 +1,30 @@
+﻿@model ViewModelsLab.Models.OrderDetailsViewModel
+
+@{
+    ViewBag.Title = "OrderDetail";
+}
+
+<h2>Order Detail</h2>
+
+@*// TODO: Complete list *@
+<fieldset>
+    <legend>Order Detail</legend>
+
+    <div class="display-label">@Html.LabelFor(model => model.Id)</div>
+    <div class="display-field">@Model.Id</div>
+
+    <div class="display-label">@Html.LabelFor(model => model.CustomerName)</div>
+    <div class="display-field">@Model.CustomerName</div>
+
+    <ul>
+        @foreach (string item in Model.OrderLineItem)
+        {
+            <li>@item</li>
+        }
+    </ul>
+
+    <div class="display-label">@Html.LabelFor(model => model.Total)</div>
+    <div class="display-field">@Model.Total</div>
+</fieldset>
+
+@Html.ActionLink("Add item", "AddItem", new { id=Model.Id})
