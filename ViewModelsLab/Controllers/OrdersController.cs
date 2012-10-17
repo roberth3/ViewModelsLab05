@@ -85,7 +85,7 @@ namespace ViewModelsLab.Controllers
                     Id = item.Id,
                     ProductList = new SelectList(
                         productRepository.GetAll(),
-                        "productName",
+                        "Name",
                         "name")
                 };
                 return View(idvm);
